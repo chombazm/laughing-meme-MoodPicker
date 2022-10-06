@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { useAppContext } from './App.provider';
 import { groupBy } from 'lodash';
 import { VictoryPie } from 'victory-native';
@@ -14,7 +14,7 @@ export const Analytics: React.FC = () => {
   );
 
   return (
-    <View>
+    <View style={styeles.container}>
       <VictoryPie
         data={data}
         colorScale={['tomato', 'orange', 'gold', 'lavender', 'magenta']}
@@ -22,3 +22,11 @@ export const Analytics: React.FC = () => {
     </View>
   );
 };
+
+const styeles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
