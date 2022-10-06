@@ -15,7 +15,10 @@ export const Analytics: React.FC = () => {
 
   return (
     <View>
-      <VictoryPie data={data} />
+      <VictoryPie
+        data={data}
+        colorScale={['tomato', 'orange', 'gold', 'lavender', 'magenta']}
+      />
     </View>
   );
 };
