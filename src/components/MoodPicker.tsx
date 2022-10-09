@@ -1,9 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, Pressable, Image } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { MoodOptionTypes } from '../types';
 import { theme } from '../theme';
-
-const imgSource = require('../../assets/butterflies.png');
+import { AddGif } from './AddGif';
 
 const moodOptions: MoodOptionTypes[] = [
   { emoji: '🧑‍💻', description: 'studious' },
@@ -26,7 +25,7 @@ export const MoodPicker: React.FC<MoodPickerProps> = ({ onSelect }) => {
   if (hasSelected) {
     return (
       <View style={styles.container}>
-        <Image source={imgSource} style={styles.image} />
+        <AddGif mood={selectedMood as MoodOptionTypes} />
         <Pressable style={styles.button} onPress={() => setHasSelected(false)}>
           <Text style={styles.buttonText}>Back</Text>
         </Pressable>
@@ -48,7 +47,7 @@ export const MoodPicker: React.FC<MoodPickerProps> = ({ onSelect }) => {
                   ? styles.selectedMoodItem
                   : undefined,
               ]}>
-              <Text>{option.emoji}</Text>
+              <Text style={styles.emoji}>{option.emoji}</Text>
             </Pressable>
             <Text style={styles.descriptionText}>
               {option.emoji === selectedMood?.emoji ? option.description : ''}
@@ -79,6 +78,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     padding: 20,
   },
+  emoji: {
+    fontSize: 40,
+  },
   moodItem: {
     width: 60,
     height: 60,
@@ -89,7 +91,7 @@ const styles = StyleSheet.create({
   },
   selectedMoodItem: {
     borderWidth: 2,
-    backgroundColor: '#454C73',
+    // backgroundColor: theme.colorPurple,
     borderColor: '#fff',
   },
   descriptionText: {
@@ -100,11 +102,10 @@ const styles = StyleSheet.create({
     fontFamily: theme.fontFamilyBold,
   },
   container: {
-    borderWidth: 2,
-    borderColor: theme.colorPurple,
     margin: 10,
     borderRadius: 10,
-    padding: 20,
+    // padding: 20,
+    // backgroundColor: 'lavender',
     justifyContent: 'space-between',
     height: 230,
   },

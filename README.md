@@ -33,5 +33,6 @@ Provided more time, there are a few things I can need improving.
 1. Add tests 🧪
 2. Add Authentication with user login and registrations 🔐
 3. Improve UI 👌🏽
+4. Publish to playstore and apple store
 
 ## Stay creative 🚀
