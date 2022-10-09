@@ -10,6 +10,10 @@ The application has few main features:
 2. View a list of recorded modes
 3. Delete A mode
 
+## Screenshots 
+Home                      |  Select mood         |  Mood list | Analytics
+:-------------------------:|:------------------------:|:------------------------:|:------------------------:
+![](https://raw.githubusercontent.com/chombazm/laughing-meme-MoodPicker/main/screenshots/Home.png)  |  ![](https://raw.githubusercontent.com/chombazm/laughing-meme-MoodPicker/main/screenshots/SelectedMood.png) |  ![](https://raw.githubusercontent.com/chombazm/laughing-meme-MoodPicker/main/screenshots/Mood%20list.png) | ![](https://raw.githubusercontent.com/chombazm/laughing-meme-MoodPicker/main/screenshots/Analytics.png)
 ## How to run
 
 To start the application on your machine, clone the app cd into the app:
