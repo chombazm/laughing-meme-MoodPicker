@@ -1,4 +1,4 @@
-# Mood Tracker - React Native
+# Mood Tracker - React Native 
 
 This a cross-platform mobile application to help me record my different moods during the day and during the week and month. Generate the report that helps me understand what causes me to be in a bad mood.
 
