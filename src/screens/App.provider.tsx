@@ -1,8 +1,7 @@
 import React from 'react';
 import { MoodOptionTypes, MoodOptionWithTimestamp } from '../types';
+import { constants } from '../constants';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
-const dataKey = 'moodtracker-app-data'; // TODO: move to constants or env
 
 type AppData = {
   moodList: MoodOptionWithTimestamp[];
@@ -11,7 +10,7 @@ type AppData = {
 const setAppData = async (appData: AppData) => {
   try {
     if (appData) {
-      await AsyncStorage.setItem(dataKey, JSON.stringify(appData));
+      await AsyncStorage.setItem(constants.dataKey, JSON.stringify(appData));
     }
   } catch {
     return null;
@@ -20,7 +19,7 @@ const setAppData = async (appData: AppData) => {
 
 const getAppData = async (): Promise<AppData | null> => {
   try {
-    const jsonValue = await AsyncStorage.getItem(dataKey);
+    const jsonValue = await AsyncStorage.getItem(constants.dataKey);
     return jsonValue != null ? JSON.parse(jsonValue) : null;
   } catch {
     return null;
@@ -88,4 +87,4 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   );
 };
 
-export const useAppContext = () => React.useContext(AppContext);
+export const useAppContext = () => React.useContext(AppContext) as AppContextType;
